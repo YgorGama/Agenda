@@ -11,10 +11,11 @@
       <p class="text-center lead">Faça login e crie sua conta abaixo</p>
       <div class="row">
 
+        <%- include('components/messages') %>
         <div class="col-lg">
             <h4>Faça seu cadastro</h4>
             <p>Se você ainda não tem conta preencha o formulario abaixo</p>
-            <form action="/login/register" method="POST">
+            <form class="form-cadastro" action="/login/register" method="POST">
               <input type="hidden" name="_csrf" value="<%=csrfToken %>">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Seu e-mail:</label>
@@ -31,11 +32,11 @@
         <div class="col-lg">
             <h4>Faça seu login</h4>
             <p>Se já tiver conta faça seu login</p>
-            <form action="/login/login"  method="POST">
+            <form class="form-login" action="/login/login"  method="POST">
               <input type="hidden" name="_csrf" value="<%=csrfToken %>">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Seu e-mail:</label>
-                <input type="email" class="form-control">
+                <input name="email" type="email" class="form-control">
               </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Sua senha</label>

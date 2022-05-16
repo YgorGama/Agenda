@@ -9,37 +9,20 @@
 
       <h1 class="display-1 text-center">Agenda</h1>
       <p class="text-center lead">Seus contatos estão abaixo</p>
-      <div class="row">
-        <div class="col">
-          <div class="alert alert-danger">
-            <span>Um erro qualquer</span>
-          </div>
-        </div>
-      </div>
+      <%- include('components/messages') %>
 
       <div class="responsible-table">
         <table class="table my-3">
-          <tr>
-            <td>Luiz</td>
-            <td>Otavio</td>
-            <td>15898956688+</td>
-            <td>Luiz@gmail.com</td>
-          </tr>
-
-          <tr>
-            <td>Luiz</td>
-            <td>Otavio</td>
-            <td>15898956688+</td>
-            <td>Luiz@gmail.com</td>
-          </tr>
-
-          <tr>
-            <td>Luiz</td>
-            <td>Otavio</td>
-            <td>15898956688+</td>
-            <td>Luiz@gmail.com</td>
-          </tr>
-        </div>
+          <% lista.forEach(element => { %>
+            <tr>
+              <td><%= element.nome %> </td>
+              <td><%= element.sobrenome %> </td>
+              <td><%= element.telefone %> </td>
+              <td><%= element.email %> </td>
+              <td><a href="/contato/registro/<%= element.id %>">Editar</a></td>
+              <td><a class="text-danger" href="/contato/delete/<%= element.id %>">Excluir</a></td>
+            </tr>
+         <%}); %> 
         </table>
       </div>
     
